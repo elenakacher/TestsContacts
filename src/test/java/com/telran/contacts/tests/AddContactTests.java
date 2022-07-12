@@ -1,6 +1,7 @@
 package com.telran.contacts.tests;
 
 import com.telran.contacts.models.Contact;
+import com.telran.contacts.models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -30,6 +31,34 @@ public class AddContactTests extends TestBase {
         Assert.assertTrue(app.getContact().isContactCreated("Tom"));
     }
 
+    //-----------------Homework----------------------------
+
+    @DataProvider
+    public Iterator<Object[]> newUserRegistrationWithInvalidEmail() throws IOException {
+        List<Object[]> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/RegFalschEmail.csv")));
+
+        String line = reader.readLine();
+
+        while (line != null) {
+            String[] split = line.split(",");
+            list.add(new Object[]{new User()
+                    .setEmail(split[0])
+                    .setPassword(split[1])});
+            line = reader.readLine();
+        }
+        return list.iterator();
+    }
+
+    @Test(dataProvider = "newUserRegistrationWithInvalidEmail")
+    public void negativeRegistrationTestWithInvalidEmail(User user) {
+        app.getUser().click(By.xpath("//button[contains(text(),'Sign Out')]"));
+        app.getUser().click(By.xpath("//a[contains(., 'LOGIN')]"));
+        app.getUser().fillLoginRegistrationForm(user);
+        app.getUser().click(By.xpath("//button[contains(text(),'Registration')]"));
+    }
+
+
     @DataProvider
     public Iterator<Object[]> addNewContact(){
         List<Object[]> list = new ArrayList<>();
@@ -39,6 +68,21 @@ public class AddContactTests extends TestBase {
         list.add(new Object[]{"Tom", "White", "34987 432", "tom@gm.uk", "Erfurt", "Chef"});
         list.add(new Object[]{"Ron", "Miller", "654332122", "ron@rt.us", "Gera", "Freund"});
         return list.iterator();
+    }
+
+    @Test(dataProvider = "addNewContact")
+    public void addContactPositiveTestFromDataProvider(String name, String vName,
+                                                       String phone, String email,
+                                                       String address, String description) {
+        app.getContact().click(By.xpath("//a[contains(text(),'ADD')]"));
+        app.getContact().FillContactForm(new Contact()
+                .setName(name)
+                .setVorname(vName)
+                .setPhone(phone)
+                .setEmail(email)
+                .setAddress(address)
+                .setDescriprion(description));
+        app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
     }
 
     @DataProvider
@@ -61,28 +105,13 @@ public class AddContactTests extends TestBase {
         }
         return list.iterator();
     }
-
-    @Test(dataProvider = "addNewContact")
-    public void addContactPositiveTestFromDataProvider(String name, String vName,
-                                                       String phone, String email,
-                                                       String address, String description) {
-        app.getContact().click(By.xpath("//a[contains(text(),'ADD')]"));
-        app.getContact().FillContactForm(new Contact()
-                .setName(name)
-                .setVorname(vName)
-                .setPhone(phone)
-                .setEmail(email)
-                .setAddress(address)
-                .setDescriprion(description));
-        app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
-    }
-
     @Test(dataProvider = "addNewContactFromCSV")
     public void addContactPositiveTestFromCSV(Contact contact) {
         app.getContact().click(By.xpath("//a[contains(text(),'ADD')]"));
         app.getContact().FillContactForm(contact);
         app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
     }
+
 
     @AfterMethod
     public void postCondition(){
