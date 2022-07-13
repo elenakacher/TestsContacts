@@ -1,7 +1,6 @@
 package com.telran.contacts.tests;
 
 import com.telran.contacts.models.Contact;
-import com.telran.contacts.models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -30,34 +29,6 @@ public class AddContactTests extends TestBase {
         app.getContact().addContact();
         Assert.assertTrue(app.getContact().isContactCreated("Tom"));
     }
-
-    //-----------------Homework----------------------------
-
-    @DataProvider
-    public Iterator<Object[]> newUserRegistrationWithInvalidEmail() throws IOException {
-        List<Object[]> list = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/RegFalschEmail.csv")));
-
-        String line = reader.readLine();
-
-        while (line != null) {
-            String[] split = line.split(",");
-            list.add(new Object[]{new User()
-                    .setEmail(split[0])
-                    .setPassword(split[1])});
-            line = reader.readLine();
-        }
-        return list.iterator();
-    }
-
-    @Test(dataProvider = "newUserRegistrationWithInvalidEmail")
-    public void negativeRegistrationTestWithInvalidEmail(User user) {
-        app.getUser().click(By.xpath("//button[contains(text(),'Sign Out')]"));
-        app.getUser().click(By.xpath("//a[contains(., 'LOGIN')]"));
-        app.getUser().fillLoginRegistrationForm(user);
-        app.getUser().click(By.xpath("//button[contains(text(),'Registration')]"));
-    }
-
 
     @DataProvider
     public Iterator<Object[]> addNewContact(){

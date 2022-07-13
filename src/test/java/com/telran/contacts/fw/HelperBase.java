@@ -1,10 +1,8 @@
 package com.telran.contacts.fw;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.Alert;
 
 public class HelperBase {
 
@@ -51,5 +49,12 @@ public class HelperBase {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void isAllertActive(){
+        Alert alert = wd.switchTo().alert();
+        String allertText = wd.switchTo().alert().getText();
+        System.out.println(allertText);
+        alert.accept();
     }
 }

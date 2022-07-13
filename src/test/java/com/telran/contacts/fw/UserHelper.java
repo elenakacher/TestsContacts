@@ -29,4 +29,6 @@ public class UserHelper extends HelperBase{
         fillLoginRegistrationForm(new User().setEmail("sascha@gmail.com").setPassword("K7100596c_"));
         click(By.xpath("//button[contains(.,'Login')]"));
     }
+
+
 }
