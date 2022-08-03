@@ -1,6 +1,7 @@
 package com.telran.contacts.models;
 
 public class Contact {
+
     private String vorname;
     private String name;
     private String phone;
@@ -11,6 +12,14 @@ public class Contact {
     public Contact setVorname(String vorname) {
         this.vorname = vorname;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 
     public Contact setName(String name) {

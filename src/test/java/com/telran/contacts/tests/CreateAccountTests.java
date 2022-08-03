@@ -1,19 +1,11 @@
 package com.telran.contacts.tests;
 
 import com.telran.contacts.models.User;
+import com.telran.contacts.utils.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class CreateAccountTests extends TestBase {
 
@@ -33,30 +25,12 @@ public class CreateAccountTests extends TestBase {
         Assert.assertTrue(app.getHeader().IsSignOutButtonPresent());
     }
 
-    //-----------------Homework----------------------------
-
-    @DataProvider
-    public Iterator<Object[]> newUserRegistrationWithInvalidEmail() throws IOException {
-        List<Object[]> list = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/RegFalschEmail.csv")));
-
-        String line = reader.readLine();
-
-        while (line != null) {
-            String[] split = line.split(",");
-            list.add(new Object[]{new User()
-                    .setEmail(split[0])
-                    .setPassword(split[1])});
-            line = reader.readLine();
-        }
-        return list.iterator();
-    }
-
-    @Test(dataProvider = "newUserRegistrationWithInvalidEmail")
+    @Test(dataProvider = "newUserRegistrationWithInvalidEmail", dataProviderClass = DataProviders.class)
     public void negativeRegistrationTestWithInvalidEmail(User user) {
         app.getUser().click(By.xpath("//a[contains(., 'LOGIN')]"));
         app.getUser().fillLoginRegistrationForm(user);
         app.getUser().click(By.xpath("//button[contains(text(),'Registration')]"));
-      // app.getUser().isAllertActive();
+        Assert.assertTrue(app.getUser().isAllertPresent());
+        Assert.assertTrue(app.getContact().isElementPresent(By.xpath("//div[contains(text(),'Registration failed with code 400')]")));
     }
 }

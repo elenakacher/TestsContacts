@@ -28,6 +28,13 @@ public class ContactHelper extends HelperBase{
         pause(2000);
     }
 
+    public void addEmptyContact() {
+        click(By.xpath("//a[contains(text(),'ADD')]"));
+        FillContactForm(new Contact().setVorname("").setName("").setPhone("").setEmail("").setAddress("").setDescriprion(""));
+        clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
+        pause(2000);
+    }
+
     public void FillContactForm(Contact contact) {
         int i = (int) (System.currentTimeMillis()) / 1000;
         type(By.cssSelector("input:nth-child(1)"), contact.getVorname());
