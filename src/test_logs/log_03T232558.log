@@ -1,0 +1,35 @@
+307  [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\sps\AppData\Local\JetBrains\IdeaIE2021.3\temp-testng-customsuite.xml"
+613  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] -787804359
+613  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE RemoveContactTests.ensurePrecondition()[pri:0, instance:null] 1631013509
+614  [main] DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR RemoveContactTests.ensurePrecondition()[pri:0, instance:null] ==> TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null]
+615  [main] DEBUG org.testng.internal.Graph - [Graph]   REMOVED TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] FROM INDEPENDENT OBJECTS
+615  [main] DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR RemoveContactTests.ensurePrecondition()[pri:0, instance:null] ==> TestBase.setUp()[pri:0, instance:null]
+615  [main] DEBUG org.testng.internal.Graph - [Graph]   REMOVED TestBase.setUp()[pri:0, instance:null] FROM INDEPENDENT OBJECTS
+615  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.setUp()[pri:0, instance:null] 1452950962
+615  [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+619  [ForkJoinPool.commonPool-worker-3] DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR RemoveContactTests.ensurePrecondition()[pri:0, instance:null] ==> TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null]
+619  [ForkJoinPool.commonPool-worker-3] DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR RemoveContactTests.ensurePrecondition()[pri:0, instance:null] ==> TestBase.setUp()[pri:0, instance:null]
+620  [main] DEBUG org.testng.internal.Graph - [Graph]   REMOVED PRED TestBase.setUp()[pri:0, instance:null] FROM NODE RemoveContactTests.ensurePrecondition()[pri:0, instance:null]
+621  [main] DEBUG org.testng.internal.Graph - [Graph]   REMOVED PRED TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] FROM NODE RemoveContactTests.ensurePrecondition()[pri:0, instance:null]
+621  [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+621  [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+621  [main] DEBUG org.testng.internal.Graph - [Graph]               TestBase.setUp()[pri:0, instance:null]
+621  [main] DEBUG org.testng.internal.Graph - [Graph]               TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null]
+621  [main] DEBUG org.testng.internal.Graph - [Graph]               RemoveContactTests.ensurePrecondition()[pri:0, instance:null]
+621  [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+624  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.TearDown()[pri:0, instance:null] -256160407
+624  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.stopTest(org.testng.ITestResult)[pri:0, instance:null] 908827865
+624  [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+624  [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+624  [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+624  [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+627  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE RemoveContactTests.removeContactTest()[pri:0, instance:com.telran.contacts.tests.RemoveContactTests@79207381] 1039943684
+627  [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+627  [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+627  [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+627  [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+632  [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\sps\AppData\Local\JetBrains\IdeaIE2021.3\temp-testng-customsuite.xml
+
+2910 [main] INFO  com.telran.contacts.tests.TestBase - Test start removeContactTest with Data: []
+12132 [main] INFO  com.telran.contacts.tests.TestBase -  PASSED: test Method removeContactTest
