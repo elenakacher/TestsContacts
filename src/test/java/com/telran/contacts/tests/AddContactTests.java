@@ -53,6 +53,13 @@ public class AddContactTests extends TestBase {
         app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
     }
 
+    @Test(dataProvider = "addWrongContactFromCSV", dataProviderClass = DataProviders.class, enabled = false)
+    public void addContactNegativeTestFromCSV(Contact contact) {
+        app.getContact().click(By.xpath("//a[contains(text(),'ADD')]"));
+        app.getContact().FillContactForm(contact);
+        app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
+        Assert.assertTrue(app.getContact().isContactListEmpty());
+    }
     @AfterMethod
     public void postCondition(){
         app.getContact().removeContact();

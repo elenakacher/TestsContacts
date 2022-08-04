@@ -64,4 +64,25 @@ public class DataProviders {
         return list.iterator();
     }
 
+    @DataProvider
+    public Iterator<Object[]> addWrongContactFromCSV() throws IOException {
+        List<Object[]> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/Contacts.csv")));
+
+        String line = reader.readLine();
+
+        while (line != null) {
+            String[] arraySplit = line.split(",");
+            list.add(new Object[]{new Contact()
+                    .setName(arraySplit[0])
+                    .setVorname(arraySplit[1])
+                    .setPhone(arraySplit[2])
+                    .setEmail(arraySplit[3])
+                    .setAddress(arraySplit[4])
+                    .setDescriprion(arraySplit[5])});
+            line = reader.readLine();
+        }
+        return list.iterator();
+    }
+
 }

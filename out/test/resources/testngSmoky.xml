@@ -14,9 +14,6 @@
                 </methods>
             </class>
             <class name="com.telran.contacts.tests.RemoveContactTests">
-                <methods>
-                    <exclude name=".*Negative.*"></exclude>
-                </methods>
             </class>
         </classes>
     </test>
