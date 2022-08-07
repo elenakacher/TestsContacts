@@ -31,7 +31,7 @@ public class AddContactTests extends TestBase {
         Assert.assertTrue(app.getContact().isContactListEmpty());
     }
 
-      @Test(dataProvider = "addNewContact", dataProviderClass = DataProviders.class, enabled = false)
+      @Test(dataProvider = "addNewContact", dataProviderClass = DataProviders.class, enabled = true)
     public void addContactPositiveTestFromDataProvider(String name, String vName,
                                                        String phone, String email,
                                                        String address, String description) {
@@ -51,6 +51,7 @@ public class AddContactTests extends TestBase {
         app.getContact().click(By.xpath("//a[contains(text(),'ADD')]"));
         app.getContact().FillContactForm(contact);
         app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
+        app.getContact().removeContact();
     }
 
     @Test(dataProvider = "addWrongContactFromCSV", dataProviderClass = DataProviders.class, enabled = false)
@@ -60,6 +61,7 @@ public class AddContactTests extends TestBase {
         app.getContact().clickWithAction(By.cssSelector(".add_form__2rsm2 button"));
         Assert.assertTrue(app.getContact().isContactListEmpty());
     }
+
     @AfterMethod
     public void postCondition(){
         app.getContact().removeContact();

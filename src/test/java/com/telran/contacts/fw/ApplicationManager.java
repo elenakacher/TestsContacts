@@ -34,10 +34,10 @@ public class ApplicationManager {
     }
 
     public void init() {
-        if (browser.equals(BrowserType.CHROME)) {
+        if (browser.equals(BrowserType.FIREFOX)) {
+        wd = new FirefoxDriver();
+        } else if (browser.equals(BrowserType.CHROME)) {
             wd = new ChromeDriver();
-        } else if (browser.equals(BrowserType.FIREFOX)) {
-            wd = new FirefoxDriver();
         }
         wd.get("https://contacts-app-tobbymarshall815.vercel.app");
         wd.manage().window().maximize();
