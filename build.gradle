@@ -33,3 +33,12 @@ task testngSmoky(type:Test) {
         systemProperty 'browser', "${browser}"
     }
 }
+
+task testngHome(type:Test) {
+    useTestNG(){
+        suites 'src/test/resources/testngHome.xml'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+}
