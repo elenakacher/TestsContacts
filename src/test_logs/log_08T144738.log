@@ -1,0 +1,35 @@
+380  [main] DEBUG org.testng.TestNG - suiteXmlPath: "D:\TelRan\Testing\GitHub\TestsContacts\src\test\resources\testngHome.xml"
+754  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] -787804359
+755  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.setUp()[pri:0, instance:null] 1452950962
+755  [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+758  [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+759  [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+759  [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+762  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.stopTest(org.testng.ITestResult)[pri:0, instance:null] 908827865
+762  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.TearDown()[pri:0, instance:null] -256160407
+762  [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+763  [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+763  [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+763  [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE HomePageTests.AboutTest()[pri:0, instance:com.telran.contacts.tests.HomePageTests@5a5a729f] 92102825
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE HomePageTests.PhonebookTest()[pri:0, instance:com.telran.contacts.tests.HomePageTests@5a5a729f] -19550433
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE HomePageTests.openHomePagetest()[pri:0, instance:com.telran.contacts.tests.HomePageTests@5a5a729f] -933359970
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE HomePageTests.LoginTest()[pri:0, instance:com.telran.contacts.tests.HomePageTests@5a5a729f] -708667827
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ADDING NODE HomePageTests.HomeTest()[pri:0, instance:com.telran.contacts.tests.HomePageTests@5a5a729f] -1364292025
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+767  [main] DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+767  [main] DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+774  [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\TelRan\Testing\GitHub\TestsContacts\src\test\resources\testngHome.xml
+
+4867 [main] INFO  com.telran.contacts.tests.TestBase - Test start AboutTest with Data: []
+5713 [main] INFO  com.telran.contacts.tests.TestBase -  PASSED: test Method AboutTest
+8981 [main] INFO  com.telran.contacts.tests.TestBase - Test start HomeTest with Data: []
+9795 [main] INFO  com.telran.contacts.tests.TestBase -  PASSED: test Method HomeTest
+13341 [main] INFO  com.telran.contacts.tests.TestBase - Test start LoginTest with Data: []
+14293 [main] INFO  com.telran.contacts.tests.TestBase -  PASSED: test Method LoginTest
+17749 [main] INFO  com.telran.contacts.tests.TestBase - Test start PhonebookTest with Data: []
+18590 [main] INFO  com.telran.contacts.tests.TestBase -  PASSED: test Method PhonebookTest
+21853 [main] INFO  com.telran.contacts.tests.TestBase - Test start openHomePagetest with Data: []
+22673 [main] INFO  com.telran.contacts.tests.TestBase -  PASSED: test Method openHomePagetest

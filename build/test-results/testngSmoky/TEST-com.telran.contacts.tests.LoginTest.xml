@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran.contacts.tests.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-04T09:57:59" hostname="DESKTOP-J22V0IL" time="0.892">
+  <properties/>
+  <testcase name="loginUserPositiveTest" classname="com.telran.contacts.tests.LoginTest" time="0.892"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 102.0.5005.61 (0e59bcc00cc4985ce39ad31c150065f159d95ad3-refs/branch-heads/5005@{#819}) on port 35739
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1659607078.282][WARNING]: This version of ChromeDriver has not been tested with Chrome version 103.
+Aug. 04, 2022 11:57:58 VORM. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMATION: Detected dialect: W3C
+]]></system-err>
+</testsuite>
